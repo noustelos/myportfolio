@@ -1,0 +1,79 @@
+.card:hover .frame {
+  box-shadow:
+    0 25px 70px rgba(0,0,0,0.12);
+  position: relative;
+}
+
+.card:hover .frame::after {
+  content: "";
+  position: absolute;
+  inset: -40px;
+  background: radial-gradient(circle, rgba(178,139,103,0.2) 0%, transparent 70%);
+  z-index: -1;
+  filter: blur(40px);
+}.partnership {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.script {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 22px;
+  color: #666;
+  letter-spacing: 1px;
+}
+
+.brand {
+  display: block;
+  margin-top: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #111;
+}.brand {
+  position: relative;
+}
+
+.brand::after {
+  content: "";
+  position: absolute;
+  width: 40%;
+  height: 2px;
+  background: #B28B67;
+  left: 30%;
+  bottom: -8px;
+}
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(48px, 8vw, 90px);
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.partnership {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.script {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: calc(clamp(48px, 8vw, 90px) / 2);
+  color: #666;
+  letter-spacing: 1px;
+}
+
+.brand {
+  display: block;
+  margin-top: 10px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
