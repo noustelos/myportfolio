@@ -1,79 +1,126 @@
-.card:hover .frame {
-  box-shadow:
-    0 25px 70px rgba(0,0,0,0.12);
+:root {
+  --bg: #C3CDBA; /* Muted Sage */
+  --text: #111;
+  --muted: #5E6B4E;
+  --frame-bg: #FAF9F6;
+  --accent: #B28B67;
+}
+
+/* Κλείδωμα Scroll */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden; /* No scroll */
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+}
+
+/* Header - Προσαρμοσμένο ύψος */
+header {
+  height: 25vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 20px;
+}
+
+h1 {
+  font-family: 'Italianno', cursive;
+  font-size: clamp(60px, 8vw, 110px);
+  color: #FFFFFF !important;
+  font-weight: 400;
+  line-height: 0.6;
+  margin-bottom: 10px;
+}
+
+.partnership { margin-top: 10px; }
+.script {
+  font-family: 'Cormorant+Garamond', serif;
+  font-style: italic;
+  font-size: clamp(18px, 2vw, 24px);
+  color: rgba(255,255,255,0.8);
+}
+.brand {
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-left: 10px;
+}
+
+/* Projects Section - Καταλαμβάνει το κέντρο */
+.projects-container {
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
+  margin-top: 50px;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  width: 100%;
+}
+
+.card { text-decoration: none; color: inherit; transition: transform 0.4s ease; }
+
+.frame {
+  background: var(--frame-bg);
+  padding: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
   position: relative;
 }
 
+.image-wrapper { aspect-ratio: 3 / 2; overflow: hidden; }
+.image-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+
+.project-title { font-size: 13px; font-weight: 600; margin-top: 12px; }
+.project-meta { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+
+/* Glow effect */
+.card:hover { transform: translateY(-8px); }
 .card:hover .frame::after {
   content: "";
   position: absolute;
-  inset: -40px;
-  background: radial-gradient(circle, rgba(178,139,103,0.2) 0%, transparent 70%);
+  inset: -25px;
+  background: radial-gradient(circle, rgba(178,139,103,0.15) 0%, transparent 70%);
   z-index: -1;
-  filter: blur(40px);
-}.partnership {
-  margin-top: 60px;
+  filter: blur(30px);
+}
+
+/* FOOTER - Το "Classy" κλείσιμο */
+footer {
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
-.script {
-  display: block;
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 22px;
-  color: #666;
-  letter-spacing: 1px;
-}
-
-.brand {
-  display: block;
-  margin-top: 8px;
+.footer-text {
   font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 20px;
-  letter-spacing: 2px;
+  font-weight: 300;
+  font-size: 11px;
+  letter-spacing: 8px; /* ΠολύClassy look */
   text-transform: uppercase;
-  color: #111;
-}.brand {
-  position: relative;
+  color: #FFFFFF; /* Τέλεια αντίθεση με το Sage */
+  opacity: 0.9;
 }
 
-.brand::after {
-  content: "";
-  position: absolute;
-  width: 40%;
-  height: 2px;
-  background: #B28B67;
-  left: 30%;
-  bottom: -8px;
-}
-h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(48px, 8vw, 90px);
-  font-weight: 700;
-  letter-spacing: -1px;
-}
-
-.partnership {
-  margin-top: 40px;
-  text-align: center;
-}
-
-.script {
-  display: block;
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: calc(clamp(48px, 8vw, 90px) / 2);
-  color: #666;
-  letter-spacing: 1px;
-}
-
-.brand {
-  display: block;
-  margin-top: 10px;
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  font-size: 18px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
+@media(max-width: 1000px) {
+  .projects { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  html, body { overflow: auto; height: auto; } /* Scroll μόνο σε κινητά */
 }
