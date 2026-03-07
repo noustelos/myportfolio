@@ -10,9 +10,9 @@
 html, body {
   margin: 0;
   padding: 0;
-  height: 100vh;
+  height: auto;
   width: 100vw;
-  overflow: hidden; /* No scroll */
+  overflow: auto;
   background: var(--bg);
   display: flex;
   flex-direction: column;
@@ -118,6 +118,7 @@ footer {
   text-transform: uppercase;
   color: #FFFFFF; /* Τέλεια αντίθεση με το Sage */
   opacity: 0.9;
+  margin-top: 50px;
 }
 
 @media(max-width: 1000px) {
